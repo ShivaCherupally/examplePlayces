@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/sportsCardSubListCVID"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:orientation="horizontal">
+
+
+    <ImageView
+        android:id="@+id/statusColorTVID"
+        android:layout_width="2.5dp"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="2dp"
+
+        android:background="@color/transparent" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:orientation="vertical"
+        android:weightSum="3">
+
+        <RelativeLayout
+            android:id="@+id/bookinRowRLID"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="3dp"
+            android:orientation="horizontal"
+            >
+
+            <TextView
+                android:id="@+id/bookingidLocalTVID"
+                style="@style/headerTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:gravity="left"
+                android:visibility="gone"
+                android:text="@string/bookinIdNo"
+                android:textColor="#333333" />
+
+            <ImageView
+                android:id="@+id/bookCancelIVID"
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:background="@drawable/forbidden"
+                android:gravity="right"
+                android:padding="5dp"
+                android:visibility="gone" />
+        </RelativeLayout>
+
+
+        <LinearLayout
+            android:id="@+id/childOneitemLLID"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/hari_stylished_button"
+            android:weightSum="3"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/sportsNameTVID"
+                style="@style/sub_sub_Title_texts"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="0.8"
+                android:gravity="left"
+                android:paddingBottom="16dp"
+                android:paddingLeft="5dp"
+                android:singleLine="true"
+                android:text="@string/sportName"
+                android:textColor="#333333" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1.2"
+                android:orientation="vertical"
+                android:padding="3dp">
+
+                <TextView
+                    android:id="@+id/sportsDayAndTimeTVID"
+                    style="@style/sub_sub_Title_texts"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:singleLine="true"
+                    android:text="@string/sportDateAndTime"
+                    android:textColor="#333333"
+                    android:textSize="13sp" />
+
+                <TextView
+                    android:id="@+id/sportsTimeTVID"
+                    style="@style/sub_sub_Title_texts"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:gravity="center_horizontal"
+                    android:singleLine="true"
+                    android:text="11 AM - 12 AM"
+                    android:textColor="#333333" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="0.75"
+                android:gravity="right"
+                android:padding="5dp"
+                android:orientation="vertical"
+                >
+
+                <TextView
+                    android:id="@+id/courtNoTVID"
+                    style="@style/sub_sub_Title_texts"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:singleLine="true"
+                    android:text="@string/court"
+                    android:textColor="#333333" />
+
+                <TextView
+                    android:id="@+id/amontPaidTVID"
+                    style="@style/headerTitle_sub"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:singleLine="true"
+                    android:text="@string/inr_300"
+                    android:textColor="#333333" />
+
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/CancelImageLLID"
+                android:layout_width="0dp"
+                android:layout_weight="0.25"
+                android:gravity="right"
+                android:visibility="gone"
+                android:layout_gravity="center_vertical"
+                android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/courtCancelIVID"
+                android:layout_width="21dp"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                android:layout_height="21dp"
+                android:background="@drawable/forbidden"
+                 />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/confirmLLID"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/textAmountLLID"
+            android:layout_gravity="right"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:visibility="gone"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/confirmPaymentBtnID"
+                style="@style/headerTitle_small"
+                android:layout_width="match_parent"
+                android:layout_height="25dp"
+                android:layout_gravity="right"
+                android:layout_marginRight="7dp"
+                android:background="#0084b4"
+                android:gravity="center_horizontal|center_vertical"
+                android:padding="3dp"
+                android:text="@string/confirm_payment"
+                android:textAllCaps="false"
+                android:textColor="@color/white" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/amounPaidLLID"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/textAmountLLID"
+            android:layout_gravity="right"
+            android:layout_marginBottom="5dp"
+            android:visibility="gone"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/headerTitle_small"
+                android:layout_width="wrap_content"
+                android:layout_height="25dp"
+                android:background="@color/transparent"
+                android:clickable="false"
+                android:padding="5dp"
+                android:text="@string/amount_paid"
+                android:textAllCaps="false"
+                android:textColor="#333333" />
+
+            <Button
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:background="@drawable/correct" />
+        </LinearLayout>
+
+        <!--<LinearLayout
+            android:id="@+id/bookinRowRLID"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/textAmountLLID"
+            android:layout_gravity="right"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="5dp"
+            android:visibility="gone"
+            android:layout_marginTop="5dp"
+
+            android:orientation="horizontal"
+            >
+
+            <TextView
+                style="@style/headerTitle_small"
+                android:id="@+id/bookingidTVID"
+                android:layout_width="wrap_content"
+                android:layout_height="25dp"
+                android:background="@color/transparent"
+                android:clickable="false"
+                android:layout_centerVertical="true"
+                android:paddingTop="3dp"
+
+                android:text="Booking Cancelled"
+                android:textAllCaps="false"
+                android:textColor="#333333" />
+
+            <ImageView
+                android:id="@+id/bookCancelIVID"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:background="@drawable/forbidden"
+                android:layout_width="24dp"
+                android:layout_marginLeft="5dp"
+                android:layout_height="24dp"
+                 />
+        </LinearLayout>-->
+    </LinearLayout>
+</LinearLayout>

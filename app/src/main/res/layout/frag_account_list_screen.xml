@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:wheel="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
+    <LinearLayout
+        android:id="@+id/profileComptDLLID"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/playcesbackgroundColor"
+        android:orientation="vertical">
+
+
+        <LinearLayout
+            android:id="@+id/listLLID"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="7dp"
+            android:background="#fff"
+            android:orientation="vertical"
+            android:paddingBottom="35dp">
+
+            <TextView
+                android:id="@+id/logoutTVID"
+                style="@style/headerTitle"
+                android:layout_marginTop="7dp"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_gravity="right"
+                android:layout_marginRight="5dp"
+                android:layout_marginLeft="5dp"
+                android:background="@drawable/menudots"
+                android:gravity="right"
+                />
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#fff"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/userNameTVID"
+                    style="@style/headerTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:text="@string/userName"
+                    android:textColor="@color/playcestextColor" />
+
+                <RelativeLayout
+                    android:id="@+id/logoutRLID"
+                    android:layout_width="wrap_content"
+                    android:layout_height="25dp"
+                    android:layout_alignParentRight="true"
+                    android:clickable="true"
+                    android:gravity="right"
+                    android:visibility="gone"
+                    android:focusable="true"
+                    android:layout_marginTop="1dp"
+                    android:orientation="horizontal"
+                    android:layout_marginRight="5dp"
+                    >
+
+                    <View
+                        android:id="@+id/logooutBtnID"
+                        android:layout_width="15dp"
+                        android:layout_height="15dp"
+                        android:layout_centerVertical="true"
+                        android:focusable="false"
+
+                        android:layout_marginLeft="5dp"
+                        android:background="@drawable/logout"
+                        android:clickable="false" />
+
+                    <Button
+                        android:id="@+id/logoutBtnID"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:background="@color/transparent"
+                        android:clickable="false"
+                        android:text="@string/log_out"
+                        android:focusable="false"
+                        android:textAllCaps="false"
+                        android:textColor="@color/playcestextColor"
+
+                        android:textSize="12dp" />
+                </RelativeLayout>
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/userEmailTVID"
+                style="@style/headerTitle_sub"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="7dp"
+                android:gravity="center_horizontal"
+                android:text="@string/userEmail"
+                android:textColor="@color/playcestextColor" />
+
+            <TextView
+                android:id="@+id/mobileTVID"
+                style="@style/headerTitle_sub"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="7dp"
+                android:gravity="center_horizontal"
+                android:text="@string/userMoblie"
+                android:textColor="@color/playcestextColor" />
+        </LinearLayout>
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <RelativeLayout
+                android:id="@+id/listRLID"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="7dp"
+                android:layout_marginLeft="7dp"
+                android:layout_marginRight="7dp"
+                android:orientation="vertical">
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/list"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:animationCache="false"
+                    android:background="@color/transparent"
+                    android:scrollingCache="false"
+                    android:smoothScrollbar="true" />
+
+                <in.playcerteam.playces.libs.ProgressWheel
+                    android:id="@+id/progress_wheel1"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    wheel:matProg_barColor="@color/colorPrimary"
+                    wheel:matProg_progressIndeterminate="true" />
+
+                <TextView
+                    android:id="@+id/noSportsAvailableTVID"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:gravity="center_horizontal"
+                    android:text="@string/events_unavail"
+                    android:textColor="@color/all_textColor"
+                    android:textSize="22sp"
+                    android:visibility="gone"
+                    android:textStyle="bold"
+                     />
+
+            </RelativeLayout>
+
+            <include layout="@layout/dialog_layout_no_network" />
+
+
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+
+</RelativeLayout>

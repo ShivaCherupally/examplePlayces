@@ -1,0 +1,2477 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:wheel="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/sports_locationRLID"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:background="@color/white"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/sports_locationTVID"
+            style="@style/headerTitle_sub"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="5dp"
+            android:clickable="false"
+            android:focusable="false"
+            android:gravity="center"
+            android:singleLine="true"
+            android:text="@string/sports_location"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="@color/playcestextColor" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/spiAndCalRLID"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_below="@+id/sports_locationRLID"
+        android:layout_marginBottom="5dp"
+        android:background="@color/white"
+        android:clickable="false"
+        android:focusable="false"
+        android:padding="10dp">
+
+        <Spinner
+            android:id="@+id/sportsSPID"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:focusableInTouchMode="true"
+            android:textColor="@color/slot_time_color"></Spinner>
+
+
+        <TextView
+            android:id="@+id/prevousDateTVID"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="5dp"
+            android:layout_toLeftOf="@+id/availableDateTVID"
+            android:background="@drawable/previous"
+            android:clickable="true"
+            android:focusable="true"
+            android:onClick="onClick"
+            android:focusableInTouchMode="true"
+            android:gravity="left" />
+
+        <TextView
+            android:id="@+id/availableDateTVID"
+            style="@style/headerTitle_sub"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_alignParentTop="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="12dp"
+            android:layout_marginRight="12dp"
+            android:layout_toLeftOf="@+id/nextDayTVID"
+            android:clickable="true"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:gravity="center"
+            android:singleLine="true"
+            android:text="@string/calender"
+
+            android:textColor="@color/slot_time_color" />
+
+        <TextView
+            android:id="@+id/nextDayTVID"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/next"
+            android:clickable="true"
+
+            android:focusable="true"
+
+            android:focusableInTouchMode="true"
+            android:gravity="right" />
+
+
+    </RelativeLayout>
+
+    <ScrollView
+        android:id="@+id/completeslotsSVID"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        android:layout_below="@+id/spiAndCalRLID">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#eeeeee"
+            android:orientation="vertical">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical|center"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="5dp"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:weightSum="3">
+
+
+                <LinearLayout
+                    android:id="@+id/FirstRowFirstColumnLLID"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_weight="1"
+                    android:background="#fff"
+                    android:gravity="center_vertical|center"
+                    android:orientation="vertical"
+                    android:paddingTop="9dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal|center"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/slottime1TVID"
+                            style="@style/slot_time_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+
+                            android:singleLine="true"
+                            android:text="@string/time_for_slot1"
+                            android:textColor="@color/slot_time_color" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center_horizontal|center"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:paddingBottom="9dp"
+                        android:paddingTop="5dp">
+
+                        <TextView
+                            android:id="@+id/availableCourts1TVID"
+                            style="@style/avaialable_count_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/booked"
+
+                            android:textColor="@color/colorPrimary" />
+
+
+                        <TextView
+                            android:id="@+id/totalCourts1TVID"
+                            style="@style/total_count_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/totalbookings"
+                            android:textColor="@color/slot_time_color" />
+
+                        <TextView
+                            android:id="@+id/avaialable1TVID"
+                            style="@style/available_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:singleLine="true"
+                            android:text="@string/available" />
+                    </LinearLayout>
+
+                    <View
+                        android:id="@+id/FirstRowFirstColumn_SELECT_VID"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/slot_select_view"
+                        android:background="@color/colorAccent"
+                        android:visibility="gone" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/FirstRowSecondColumnLLID"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_weight="1"
+                    android:background="#fff"
+                    android:gravity="center_vertical|center"
+                    android:orientation="vertical"
+                    android:paddingTop="9dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal|center"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/slottime2TVID"
+                            style="@style/slot_time_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:singleLine="true"
+                            android:text="@string/time_for_slot2"
+                            android:textColor="@color/slot_time_color" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal|center"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:paddingBottom="9dp"
+                        android:paddingTop="5dp">
+
+                        <TextView
+                            android:id="@+id/availableCourts2TVID"
+                            style="@style/avaialable_count_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/booked"
+                            android:textColor="@color/colorPrimary" />
+
+
+                        <TextView
+                            android:id="@+id/totalCourts2TVID"
+                            style="@style/total_count_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/totalbookings"
+                            android:textColor="@color/slot_time_color" />
+
+                        <TextView
+                            android:id="@+id/avaialable2TVID"
+                            style="@style/available_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:singleLine="true"
+                            android:text="@string/available" />
+                    </LinearLayout>
+
+                    <View
+                        android:id="@+id/FirstRowSecondColumn_SELECT_VID"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/slot_select_view"
+                        android:background="@color/colorAccent"
+                        android:visibility="gone" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/FirstRowThirdColumnLLID"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_weight="1"
+                    android:background="#fff"
+                    android:gravity="center_vertical|center"
+                    android:orientation="vertical"
+                    android:paddingTop="9dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal|center"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/slottime3TVID"
+                            style="@style/slot_time_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:singleLine="true"
+                            android:text="@string/time_for_slot3"
+                            android:textColor="@color/slot_time_color" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal|center"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:paddingBottom="9dp"
+                        android:paddingTop="5dp">
+
+                        <TextView
+                            android:id="@+id/availableCourts3TVID"
+                            style="@style/avaialable_count_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/booked"
+                            android:textColor="@color/colorPrimary" />
+
+
+                        <TextView
+                            android:id="@+id/totalCourts3TVID"
+                            style="@style/total_count_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/totalbookings"
+                            android:textColor="@color/slot_time_color" />
+
+                        <TextView
+                            android:id="@+id/avaialable3TVID"
+                            style="@style/available_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:singleLine="true"
+                            android:text="@string/available" />
+
+
+                    </LinearLayout>
+
+                    <View
+                        android:id="@+id/FirstRowThirdColumn_SELECT_VID"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/slot_select_view"
+                        android:background="@color/colorAccent"
+                        android:visibility="gone" />
+
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <!--Invisible Courts line1-->
+            <LinearLayout
+                android:id="@+id/rowOneCourtsLLID"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="7dp"
+                android:layout_marginLeft="7dp"
+                android:layout_marginRight="7dp"
+                android:background="@color/transparent"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+
+                <in.playcerteam.playces.libs.ExpandableHeightGridView
+                    android:id="@+id/grid"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:horizontalSpacing="7dp"
+                    android:isScrollContainer="false"
+                    android:numColumns="4"
+                    android:stretchMode="columnWidth"
+                    android:verticalSpacing="7dp" />
+
+                <Button
+                    android:id="@+id/confirmBookingBtnID"
+                    style="@style/slot_time_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="35dp"
+                    android:layout_gravity="right"
+                    android:layout_marginBottom="7dp"
+                    android:layout_marginTop="5dp"
+                    android:background="#0084b4"
+                    android:padding="5dp"
+                    android:text="Confirm Booking"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical|center"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="5dp"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:weightSum="3">
+
+                <LinearLayout
+                    android:id="@+id/SecondRowFirstColumnLLID"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_weight="1"
+                    android:background="#fff"
+                    android:gravity="center_vertical|center"
+                    android:orientation="vertical"
+                    android:paddingTop="9dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal|center"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/slottime4TVID"
+                            style="@style/slot_time_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:singleLine="true"
+                            android:text="@string/time_for_slot4"
+                            android:textColor="@color/slot_time_color" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal|center"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:paddingBottom="9dp"
+                        android:paddingTop="5dp">
+
+                        <TextView
+                            android:id="@+id/availableCourts4TVID"
+                            style="@style/avaialable_count_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/booked"
+                            android:textColor="@color/colorPrimary" />
+
+
+                        <TextView
+                            android:id="@+id/totalCourts4TVID"
+                            style="@style/total_count_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/totalbookings"
+                            android:textColor="@color/slot_time_color" />
+
+                        <TextView
+                            android:id="@+id/avaialable4TVID"
+                            style="@style/available_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:singleLine="true"
+                            android:text="@string/available" />
+
+
+                    </LinearLayout>
+
+                    <View
+                        android:id="@+id/SecondRowFirstColumn_SELECT_VID"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/slot_select_view"
+                        android:background="@color/colorAccent"
+                        android:visibility="gone" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/SecondRowSecondColumnLLID"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_weight="1"
+                    android:background="#fff"
+                    android:gravity="center_vertical|center"
+                    android:orientation="vertical"
+                    android:paddingTop="9dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal|center"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/slottime5TVID"
+                            style="@style/slot_time_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:singleLine="true"
+                            android:text="@string/time_for_slot5"
+                            android:textColor="@color/slot_time_color" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal|center"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:paddingBottom="9dp"
+                        android:paddingTop="5dp">
+
+                        <TextView
+                            android:id="@+id/availableCourts5TVID"
+                            style="@style/avaialable_count_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/booked"
+                            android:textColor="@color/colorPrimary" />
+
+
+                        <TextView
+                            android:id="@+id/totalCourts5TVID"
+                            style="@style/total_count_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/totalbookings"
+                            android:textColor="@color/slot_time_color" />
+
+                        <TextView
+                            android:id="@+id/avaialable5TVID"
+                            style="@style/available_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:singleLine="true"
+                            android:text="@string/available" />
+
+
+                    </LinearLayout>
+
+                    <View
+                        android:id="@+id/SecondRowSecondColumn_SELECT_VID"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/slot_select_view"
+                        android:visibility="gone"
+                        android:background="@color/colorAccent"
+                         />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/SecondRowThirdColumnLLID"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_weight="1"
+                    android:background="#fff"
+                    android:gravity="center_vertical|center"
+                    android:orientation="vertical"
+                    android:paddingTop="9dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal|center"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/slottime6TVID"
+                            style="@style/slot_time_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:singleLine="true"
+                            android:text="@string/time_for_slot6"
+                            android:textColor="@color/slot_time_color" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal|center"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:paddingBottom="9dp"
+                        android:paddingTop="5dp">
+
+                        <TextView
+                            android:id="@+id/availableCourts6TVID"
+                            style="@style/avaialable_count_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/booked"
+                            android:textColor="@color/colorPrimary" />
+
+
+                        <TextView
+                            android:id="@+id/totalCourts6TVID"
+                            style="@style/total_count_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/totalbookings"
+                            android:textColor="@color/slot_time_color" />
+
+                        <TextView
+                            android:id="@+id/avaialable6TVID"
+                            style="@style/available_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:singleLine="true"
+                            android:text="@string/available" />
+
+
+                    </LinearLayout>
+
+                    <View
+                        android:id="@+id/SecondRowThirdColumn_SELECT_VID"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/slot_select_view"
+                        android:background="@color/colorAccent"
+                        android:visibility="gone" />
+
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <!--Invisible Courts line2-->
+            <LinearLayout
+                android:id="@+id/rowtwoCourtsLLID"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="7dp"
+                android:layout_marginLeft="7dp"
+                android:visibility="gone"
+                android:layout_marginRight="7dp"
+                android:background="@color/transparent"
+                android:orientation="vertical"
+                >
+
+
+                <in.playcerteam.playces.libs.ExpandableHeightGridView
+                    android:id="@+id/gridrow2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:horizontalSpacing="7dp"
+                    android:isScrollContainer="false"
+                    android:numColumns="4"
+                    android:stretchMode="columnWidth"
+                    android:verticalSpacing="7dp" />
+
+                <Button
+                    android:id="@+id/confirmBookingBtn2ID"
+                    style="@style/slot_time_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="35dp"
+                    android:layout_gravity="right"
+                    android:layout_marginBottom="7dp"
+                    android:background="#0084b4"
+                    android:padding="5dp"
+                    android:text="Confirm Booking"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical|center"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:weightSum="3">
+
+                <LinearLayout
+                    android:id="@+id/ThirdRowFirstColumnLLID"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_weight="1"
+                    android:background="#fff"
+                    android:gravity="center_vertical|center"
+                    android:orientation="vertical"
+
+                    android:paddingTop="9dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal|center"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/slottime7TVID"
+                            style="@style/slot_time_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:singleLine="true"
+                            android:text="@string/time_for_slot7"
+                            android:textColor="@color/slot_time_color" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal|center"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:paddingBottom="9dp"
+                        android:paddingTop="5dp">
+
+                        <TextView
+                            android:id="@+id/availableCourts7TVID"
+                            style="@style/avaialable_count_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/booked"
+                            android:textColor="@color/colorPrimary" />
+
+
+                        <TextView
+                            android:id="@+id/totalCourts7TVID"
+                            style="@style/total_count_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/totalbookings"
+                            android:textColor="@color/slot_time_color" />
+
+                        <TextView
+                            android:id="@+id/avaialable7TVID"
+                            style="@style/available_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:singleLine="true"
+                            android:text="@string/available" />
+
+
+                    </LinearLayout>
+
+                    <View
+                        android:id="@+id/ThirdRowFirstColumn_SELECT_VID"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/slot_select_view"
+                        android:visibility="gone"
+                        android:background="@color/colorAccent" />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ThirdRowSecondColumnLLID"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_weight="1"
+                    android:background="#fff"
+                    android:gravity="center_vertical|center"
+                    android:orientation="vertical"
+                    android:paddingTop="9dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal|center"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/slottime8TVID"
+                            style="@style/slot_time_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:singleLine="true"
+                            android:text="@string/time_for_slot8"
+                            android:textColor="@color/slot_time_color" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal|center"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:paddingBottom="9dp"
+                        android:paddingTop="5dp">
+
+                        <TextView
+                            android:id="@+id/availableCourts8TVID"
+                            style="@style/avaialable_count_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/booked"
+                            android:textColor="@color/colorPrimary" />
+
+
+                        <TextView
+                            android:id="@+id/totalCourts8TVID"
+                            style="@style/total_count_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/totalbookings"
+                            android:textColor="@color/slot_time_color" />
+
+                        <TextView
+                            android:id="@+id/avaialable8TVID"
+                            style="@style/available_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:singleLine="true"
+                            android:text="@string/available" />
+
+
+                    </LinearLayout>
+
+                    <View
+                        android:id="@+id/ThirdRowSecondColumn_SELECT_VID"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/slot_select_view"
+                        android:background="@color/colorAccent" />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ThirdRowThirdColumnLLID"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_weight="1"
+                    android:background="#fff"
+                    android:gravity="center_vertical|center"
+                    android:orientation="vertical"
+                    android:paddingTop="9dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal|center"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/slottime9TVID"
+                            style="@style/slot_time_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:singleLine="true"
+                            android:text="@string/time_for_slot9"
+                            android:textColor="@color/slot_time_color" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal|center"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:paddingBottom="9dp"
+                        android:paddingTop="5dp">
+
+                        <TextView
+                            android:id="@+id/availableCourts9TVID"
+                            style="@style/avaialable_count_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/booked"
+                            android:textColor="@color/colorPrimary" />
+
+
+                        <TextView
+                            android:id="@+id/totalCourts9TVID"
+                            style="@style/total_count_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/totalbookings"
+                            android:textColor="@color/slot_time_color" />
+
+                        <TextView
+                            android:id="@+id/avaialable9TVID"
+                            style="@style/available_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:singleLine="true"
+                            android:text="@string/available" />
+
+
+                    </LinearLayout>
+
+                    <View
+                        android:id="@+id/ThirdRowThirdColumn_SELECT_VID"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/slot_select_view"
+                        android:background="@color/colorAccent" />
+
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <!--Invisible Courts line3-->
+            <LinearLayout
+                android:id="@+id/rowthreeCourtsLLID"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="7dp"
+                android:layout_marginLeft="7dp"
+                android:layout_marginRight="7dp"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+
+                <in.playcerteam.playces.libs.ExpandableHeightGridView
+                    android:id="@+id/gridrow3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="15dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="15dp"
+                    android:horizontalSpacing="10dp"
+                    android:isScrollContainer="false"
+                    android:numColumns="4"
+                    android:stretchMode="columnWidth"
+                    android:verticalSpacing="10dp" />
+
+                <Button
+                    android:id="@+id/confirmBookingBtn3ID"
+                    style="@style/slot_time_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="35dp"
+                    android:layout_gravity="right"
+                    android:layout_marginTop="5dp"
+                    android:background="#0084b4"
+                    android:padding="5dp"
+                    android:text="Confirm Booking"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical|center"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:weightSum="3">
+
+                <LinearLayout
+                    android:id="@+id/FourthRowFirstColumnLLID"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_weight="1"
+                    android:background="#fff"
+                    android:gravity="center_vertical|center"
+                    android:orientation="vertical"
+
+                    android:paddingTop="9dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal|center"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/slottime10TVID"
+                            style="@style/slot_time_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:singleLine="true"
+                            android:text="@string/time_for_slot10"
+                            android:textColor="@color/slot_time_color" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal|center"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:paddingBottom="9dp"
+                        android:paddingTop="5dp">
+
+                        <TextView
+                            android:id="@+id/availableCourts10TVID"
+                            style="@style/avaialable_count_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/booked"
+                            android:textColor="@color/colorPrimary" />
+
+
+                        <TextView
+                            android:id="@+id/totalCourts10TVID"
+                            style="@style/total_count_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/totalbookings"
+                            android:textColor="@color/slot_time_color" />
+
+                        <TextView
+                            android:id="@+id/avaialable10TVID"
+                            style="@style/available_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:singleLine="true"
+                            android:text="@string/available" />
+
+
+                    </LinearLayout>
+
+                    <View
+                        android:id="@+id/FourthRowFirstColumn_SELECT_VID"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/slot_select_view"
+                        android:background="@color/colorAccent" />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/FourthRowSecondColumnLLID"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_weight="1"
+                    android:background="#fff"
+                    android:gravity="center_vertical|center"
+                    android:orientation="vertical"
+                    android:paddingTop="9dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal|center"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/slottime11TVID"
+                            style="@style/slot_time_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:singleLine="true"
+                            android:text="@string/time_for_slot11"
+                            android:textColor="@color/slot_time_color" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal|center"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:paddingBottom="9dp"
+                        android:paddingTop="5dp">
+
+                        <TextView
+                            android:id="@+id/availableCourts11TVID"
+                            style="@style/avaialable_count_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/booked"
+                            android:textColor="@color/colorPrimary" />
+
+
+                        <TextView
+                            android:id="@+id/totalCourts11TVID"
+                            style="@style/total_count_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/totalbookings"
+                            android:textColor="@color/slot_time_color" />
+
+                        <TextView
+                            android:id="@+id/avaialable11TVID"
+                            style="@style/available_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:singleLine="true"
+                            android:text="@string/available" />
+
+
+                    </LinearLayout>
+
+                    <View
+                        android:id="@+id/FourthRowSecondColumn_SELECT_VID"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/slot_select_view"
+                        android:background="@color/colorAccent" />
+
+
+                </LinearLayout>
+
+
+                <!--</RelativeLayout>-->
+
+                <LinearLayout
+                    android:id="@+id/FourthRowThirdColumnLLID"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_weight="1"
+                    android:background="#fff"
+                    android:gravity="center_vertical|center"
+                    android:orientation="vertical"
+
+                    android:paddingTop="9dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal|center"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/slottime12TVID"
+                            style="@style/slot_time_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:singleLine="true"
+                            android:text="@string/time_for_slot12"
+                            android:textColor="@color/slot_time_color" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal|center"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:paddingBottom="9dp"
+                        android:paddingTop="5dp">
+
+                        <TextView
+                            android:id="@+id/availableCourts12TVID"
+                            style="@style/avaialable_count_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/booked"
+                            android:textColor="@color/colorPrimary" />
+
+
+                        <TextView
+                            android:id="@+id/totalCourts12TVID"
+                            style="@style/total_count_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/totalbookings"
+                            android:textColor="@color/slot_time_color" />
+
+                        <TextView
+                            android:id="@+id/avaialable12TVID"
+                            style="@style/available_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:singleLine="true"
+                            android:text="@string/available" />
+
+
+                    </LinearLayout>
+
+                    <View
+                        android:id="@+id/FourthRowThirdColumn_SELECT_VID"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/slot_select_view"
+                        android:background="@color/colorAccent" />
+
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <!--Invisible Courts line4-->
+            <LinearLayout
+                android:id="@+id/rowfourCourtsLLID"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="7dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+
+                <in.playcerteam.playces.libs.ExpandableHeightGridView
+                    android:id="@+id/gridrow4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="15dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="15dp"
+                    android:horizontalSpacing="10dp"
+                    android:isScrollContainer="false"
+                    android:numColumns="4"
+                    android:stretchMode="columnWidth"
+                    android:verticalSpacing="10dp" />
+
+                <Button
+                    android:id="@+id/confirmBookingBtn4ID"
+                    style="@style/slot_time_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="35dp"
+                    android:layout_gravity="right"
+                    android:layout_marginTop="5dp"
+                    android:background="#0084b4"
+                    android:padding="5dp"
+                    android:text="Confirm Booking"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical|center"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:weightSum="3">
+
+                <LinearLayout
+                    android:id="@+id/FifthRowFirstColumnLLID"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_weight="1"
+                    android:background="#fff"
+                    android:gravity="center_vertical|center"
+                    android:orientation="vertical"
+                    android:paddingTop="9dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal|center"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/slottime13TVID"
+                            style="@style/slot_time_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:singleLine="true"
+                            android:text="@string/time_for_slot13"
+                            android:textColor="@color/slot_time_color" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal|center"
+                        android:layout_marginBottom="9dp"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:paddingTop="5dp">
+
+                        <TextView
+                            android:id="@+id/availableCourts13TVID"
+                            style="@style/avaialable_count_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/booked"
+                            android:textColor="@color/colorPrimary" />
+
+
+                        <TextView
+                            android:id="@+id/totalCourts13TVID"
+                            style="@style/total_count_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/totalbookings"
+                            android:textColor="@color/slot_time_color" />
+
+                        <TextView
+                            android:id="@+id/avaialable13TVID"
+                            style="@style/available_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:singleLine="true"
+                            android:text="@string/available" />
+
+
+                    </LinearLayout>
+
+                    <View
+                        android:id="@+id/FifthRowFirstColumn_SELECT_VID"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/slot_select_view"
+                        android:background="@color/colorAccent" />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/FifthRowSecondColumnLLID"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_weight="1"
+                    android:background="#fff"
+                    android:gravity="center_vertical|center"
+                    android:orientation="vertical"
+
+                    android:paddingTop="9dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal|center"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/slottime14TVID"
+                            style="@style/slot_time_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:singleLine="true"
+                            android:text="@string/time_for_slot14"
+                            android:textColor="@color/slot_time_color" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal|center"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:paddingBottom="9dp"
+                        android:paddingTop="5dp">
+
+                        <TextView
+                            android:id="@+id/availableCourts14TVID"
+                            style="@style/avaialable_count_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/booked"
+                            android:textColor="@color/colorPrimary" />
+
+
+                        <TextView
+                            android:id="@+id/totalCourts14TVID"
+                            style="@style/total_count_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/totalbookings"
+                            android:textColor="@color/slot_time_color" />
+
+                        <TextView
+                            android:id="@+id/avaialable14TVID"
+                            style="@style/available_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:singleLine="true"
+                            android:text="@string/available" />
+
+
+                    </LinearLayout>
+
+                    <View
+                        android:id="@+id/FifthRowSecondColumn_SELECT_VID"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/slot_select_view"
+                        android:background="@color/colorAccent" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/FifthRowThirdColumnLLID"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_weight="1"
+                    android:background="#fff"
+                    android:gravity="center_vertical|center"
+                    android:orientation="vertical"
+
+                    android:paddingTop="9dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal|center"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/slottime15TVID"
+                            style="@style/slot_time_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:singleLine="true"
+                            android:text="@string/time_for_slot15"
+                            android:textColor="@color/slot_time_color" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal|center"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:paddingBottom="9dp"
+                        android:paddingTop="5dp">
+
+                        <TextView
+                            android:id="@+id/availableCourts15TVID"
+                            style="@style/avaialable_count_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/booked"
+                            android:textColor="@color/colorPrimary" />
+
+
+                        <TextView
+                            android:id="@+id/totalCourts15TVID"
+                            style="@style/total_count_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/totalbookings"
+                            android:textColor="@color/slot_time_color" />
+
+                        <TextView
+                            android:id="@+id/avaialable15TVID"
+                            style="@style/available_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:singleLine="true"
+                            android:text="@string/available" />
+
+
+                    </LinearLayout>
+
+                    <View
+                        android:id="@+id/FifthRowThirdColumn_SELECT_VID"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/slot_select_view"
+                        android:background="@color/colorAccent" />
+
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <!--Invisible Courts line5-->
+            <LinearLayout
+                android:id="@+id/rowfiveCourtsLLID"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="7dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+
+                <in.playcerteam.playces.libs.ExpandableHeightGridView
+                    android:id="@+id/gridrow5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="15dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="15dp"
+                    android:horizontalSpacing="10dp"
+                    android:isScrollContainer="false"
+                    android:numColumns="4"
+                    android:stretchMode="columnWidth"
+                    android:verticalSpacing="10dp" />
+
+                <Button
+                    android:id="@+id/confirmBookingBtn5ID"
+                    style="@style/slot_time_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="35dp"
+                    android:layout_gravity="right"
+                    android:layout_marginTop="5dp"
+                    android:background="#0084b4"
+                    android:padding="5dp"
+                    android:text="Confirm Booking"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical|center"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:weightSum="3">
+
+                <LinearLayout
+                    android:id="@+id/SixthRowFirstColumnLLID"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_weight="1"
+                    android:background="#fff"
+                    android:gravity="center_vertical|center"
+                    android:orientation="vertical"
+
+                    android:paddingTop="9dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal|center"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/slottime16TVID"
+                            style="@style/slot_time_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:singleLine="true"
+                            android:text="@string/time_for_slot16"
+                            android:textColor="@color/slot_time_color" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal|center"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:paddingBottom="9dp"
+                        android:paddingTop="5dp">
+
+                        <TextView
+                            android:id="@+id/availableCourts16TVID"
+                            style="@style/avaialable_count_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/booked"
+                            android:textColor="@color/colorPrimary" />
+
+
+                        <TextView
+                            android:id="@+id/totalCourts16TVID"
+                            style="@style/total_count_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/totalbookings"
+                            android:textColor="@color/slot_time_color" />
+
+                        <TextView
+                            android:id="@+id/avaialable16TVID"
+                            style="@style/available_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:singleLine="true"
+                            android:text="@string/available" />
+
+
+                    </LinearLayout>
+
+                    <View
+                        android:id="@+id/SixthRowFirstColumn_SELECT_VID"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/slot_select_view"
+                        android:background="@color/colorAccent" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/SixthRowSecondColumnLLID"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_weight="1"
+                    android:background="#fff"
+                    android:gravity="center_vertical|center"
+                    android:orientation="vertical"
+                    android:paddingTop="9dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal|center"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/slottime17TVID"
+                            style="@style/slot_time_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:singleLine="true"
+                            android:text="@string/time_for_slot17"
+                            android:textColor="@color/slot_time_color" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal|center"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:paddingBottom="9dp"
+                        android:paddingTop="5dp">
+
+                        <TextView
+                            android:id="@+id/availableCourts17TVID"
+                            style="@style/avaialable_count_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/booked"
+                            android:textColor="@color/colorPrimary" />
+
+
+                        <TextView
+                            android:id="@+id/totalCourts17TVID"
+                            style="@style/total_count_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/totalbookings"
+                            android:textColor="@color/slot_time_color" />
+
+                        <TextView
+                            android:id="@+id/avaialable17TVID"
+                            style="@style/available_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:singleLine="true"
+                            android:text="@string/available" />
+
+
+                    </LinearLayout>
+
+                    <View
+                        android:id="@+id/SixthRowSecondColumn_SELECT_VID"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/slot_select_view"
+                        android:background="@color/colorAccent" />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/SixthRowThirdColumnLLID"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_weight="1"
+                    android:background="#fff"
+                    android:gravity="center_vertical|center"
+                    android:orientation="vertical"
+                    android:paddingTop="9dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal|center"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/slottime18TVID"
+                            style="@style/slot_time_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:singleLine="true"
+                            android:text="@string/time_for_slot18" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal|center"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:paddingBottom="9dp"
+                        android:paddingTop="5dp">
+
+                        <TextView
+                            android:id="@+id/availableCourts18TVID"
+                            style="@style/avaialable_count_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/booked"
+                            android:textColor="@color/colorPrimary" />
+
+
+                        <TextView
+                            android:id="@+id/totalCourts18TVID"
+                            style="@style/total_count_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/totalbookings"
+                            android:textColor="@color/slot_time_color" />
+
+                        <TextView
+                            android:id="@+id/avaialable18TVID"
+                            style="@style/available_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:singleLine="true"
+                            android:text="@string/available" />
+
+
+                    </LinearLayout>
+
+                    <View
+                        android:id="@+id/SixthRowThirdColumn_SELECT_VID"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/slot_select_view"
+                        android:background="@color/colorAccent" />
+
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <!--Invisible Courts line6-->
+            <LinearLayout
+                android:id="@+id/rowsixCourtsLLID"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="7dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+
+                <in.playcerteam.playces.libs.ExpandableHeightGridView
+                    android:id="@+id/gridrow6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="15dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="15dp"
+                    android:horizontalSpacing="10dp"
+                    android:isScrollContainer="false"
+                    android:numColumns="4"
+                    android:stretchMode="columnWidth"
+                    android:verticalSpacing="10dp" />
+
+                <Button
+                    android:id="@+id/confirmBookingBtn6ID"
+                    style="@style/slot_time_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="35dp"
+                    android:layout_gravity="right"
+                    android:layout_marginTop="5dp"
+                    android:background="#0084b4"
+                    android:padding="5dp"
+                    android:text="Confirm Booking"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical|center"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:weightSum="3">
+
+                <LinearLayout
+                    android:id="@+id/SeventhRowFirstColumnLLID"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_weight="1"
+                    android:background="#fff"
+                    android:gravity="center_vertical|center"
+                    android:orientation="vertical"
+
+                    android:paddingTop="9dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal|center"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/slottime19TVID"
+                            style="@style/slot_time_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:singleLine="true"
+                            android:text="@string/time_for_slot19" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal|center"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:paddingBottom="9dp"
+                        android:paddingTop="5dp">
+
+                        <TextView
+                            android:id="@+id/availableCourts19TVID"
+                            style="@style/avaialable_count_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/booked"
+                            android:textColor="@color/colorPrimary" />
+
+
+                        <TextView
+                            android:id="@+id/totalCourts19TVID"
+                            style="@style/total_count_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/totalbookings"
+                            android:textColor="@color/slot_time_color" />
+
+                        <TextView
+                            android:id="@+id/avaialable19TVID"
+                            style="@style/available_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:singleLine="true"
+                            android:text="@string/available" />
+
+
+                    </LinearLayout>
+
+                    <View
+                        android:id="@+id/SeventhRowFirstColumn_SELECT_VID"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/slot_select_view"
+                        android:background="@color/colorAccent" />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/SeventhRowSecondColumnLLID"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_weight="1"
+                    android:background="#fff"
+                    android:gravity="center_vertical|center"
+                    android:orientation="vertical"
+                    android:paddingTop="9dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal|center"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/slottime20TVID"
+                            style="@style/slot_time_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:singleLine="true"
+                            android:text="@string/time_for_slot20" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal|center"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:paddingBottom="9dp"
+                        android:paddingTop="5dp">
+
+                        <TextView
+                            android:id="@+id/availableCourts20TVID"
+                            style="@style/avaialable_count_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/booked"
+                            android:textColor="@color/colorPrimary" />
+
+
+                        <TextView
+                            android:id="@+id/totalCourts20TVID"
+                            style="@style/total_count_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/totalbookings"
+                            android:textColor="@color/slot_time_color" />
+
+                        <TextView
+                            android:id="@+id/avaialable20TVID"
+                            style="@style/available_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:singleLine="true"
+                            android:text="@string/available" />
+
+
+                    </LinearLayout>
+
+                    <View
+                        android:id="@+id/SeventhRowSecondColumn_SELECT_VID"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/slot_select_view"
+                        android:background="@color/colorAccent" />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/SeventhRowThirdColumnLLID"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_weight="1"
+                    android:background="#fff"
+                    android:gravity="center_vertical|center"
+                    android:orientation="vertical"
+
+                    android:paddingTop="9dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal|center"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/slottime21TVID"
+                            style="@style/slot_time_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:singleLine="true"
+                            android:text="@string/time_for_slot21" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal|center"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:paddingBottom="9dp"
+                        android:paddingTop="5dp">
+
+                        <TextView
+                            android:id="@+id/availableCourts21TVID"
+                            style="@style/avaialable_count_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/booked"
+                            android:textColor="@color/colorPrimary" />
+
+
+                        <TextView
+                            android:id="@+id/totalCourts21TVID"
+                            style="@style/total_count_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/totalbookings"
+                            android:textColor="@color/slot_time_color" />
+
+                        <TextView
+                            android:id="@+id/avaialable21TVID"
+                            style="@style/available_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:singleLine="true"
+                            android:text="@string/available" />
+
+
+                    </LinearLayout>
+
+                    <View
+                        android:id="@+id/SeventhRowThirdColumn_SELECT_VID"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/slot_select_view"
+                        android:background="@color/colorAccent" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <!--Invisible Courts line7-->
+            <LinearLayout
+                android:id="@+id/rowsevenCourtsLLID"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="7dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+
+                <in.playcerteam.playces.libs.ExpandableHeightGridView
+                    android:id="@+id/gridrow7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="15dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="15dp"
+                    android:horizontalSpacing="10dp"
+                    android:isScrollContainer="false"
+                    android:numColumns="4"
+                    android:stretchMode="columnWidth"
+                    android:verticalSpacing="10dp" />
+
+                <Button
+                    android:id="@+id/confirmBookingBtn7ID"
+                    style="@style/slot_time_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="35dp"
+                    android:layout_gravity="right"
+                    android:layout_marginTop="5dp"
+                    android:background="#0084b4"
+                    android:padding="5dp"
+
+                    android:text="Confirm Booking"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical|center"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:weightSum="3">
+
+                <LinearLayout
+                    android:id="@+id/EigthRowFirstColumnLLID"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_weight="1"
+                    android:background="#fff"
+                    android:gravity="center_vertical|center"
+                    android:orientation="vertical"
+                    android:paddingTop="9dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal|center"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/slottime22TVID"
+                            style="@style/slot_time_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:singleLine="true"
+                            android:text="@string/time_for_slot22" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal|center"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:paddingBottom="9dp"
+                        android:paddingTop="5dp">
+
+                        <TextView
+                            android:id="@+id/availableCourts22TVID"
+                            style="@style/avaialable_count_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/booked"
+                            android:textColor="@color/colorPrimary" />
+
+
+                        <TextView
+                            android:id="@+id/totalCourts22TVID"
+                            style="@style/total_count_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/totalbookings"
+                            android:textColor="@color/slot_time_color" />
+
+                        <TextView
+                            android:id="@+id/avaialable22TVID"
+                            style="@style/available_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:singleLine="true"
+                            android:text="@string/available" />
+
+
+                    </LinearLayout>
+
+                    <View
+                        android:id="@+id/EigthRowFirstColumn_SELECT_VID"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/slot_select_view"
+                        android:background="@color/colorAccent" />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/EigthRowSecondColumnLLID"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_weight="1"
+                    android:background="#fff"
+                    android:gravity="center_vertical|center"
+                    android:orientation="vertical"
+                    android:paddingTop="9dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal|center"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/slottime23TVID"
+                            style="@style/slot_time_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:singleLine="true"
+                            android:text="@string/time_for_slot23" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal|center"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:paddingBottom="9dp"
+                        android:paddingTop="5dp">
+
+                        <TextView
+                            android:id="@+id/availableCourts23TVID"
+                            style="@style/avaialable_count_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/booked"
+                            android:textColor="@color/colorPrimary" />
+
+
+                        <TextView
+                            android:id="@+id/totalCourts23TVID"
+                            style="@style/total_count_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/totalbookings"
+                            android:textColor="@color/slot_time_color" />
+
+                        <TextView
+                            android:id="@+id/avaialable23TVID"
+                            style="@style/available_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:singleLine="true"
+                            android:text="@string/available" />
+
+
+                    </LinearLayout>
+
+                    <View
+                        android:id="@+id/EigthRowSecondColumn_SELECT_VID"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/slot_select_view"
+                        android:background="@color/colorAccent" />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/EigthRowThirdColumnLLID"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_weight="1"
+                    android:background="#fff"
+                    android:gravity="center_vertical|center"
+                    android:orientation="vertical"
+                    android:paddingTop="9dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal|center"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/slottime24TVID"
+                            style="@style/slot_time_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:singleLine="true"
+                            android:text="@string/time_for_slot24" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal|center"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:paddingBottom="9dp"
+                        android:paddingTop="5dp">
+
+                        <TextView
+                            android:id="@+id/availableCourts24TVID"
+                            style="@style/avaialable_count_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/booked"
+                            android:textColor="@color/colorPrimary" />
+
+
+                        <TextView
+                            android:id="@+id/totalCourts24TVID"
+                            style="@style/total_count_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/totalbookings"
+                            android:textColor="@color/slot_time_color" />
+
+                        <TextView
+                            android:id="@+id/avaialable24TVID"
+                            style="@style/available_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:singleLine="true"
+                            android:text="@string/available" />
+
+
+                    </LinearLayout>
+
+                    <View
+                        android:id="@+id/EigthRowThirdColumn_SELECT_VID"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/slot_select_view"
+                        android:background="@color/colorAccent" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <!--Invisible Courts line8-->
+            <LinearLayout
+                android:id="@+id/roweigthCourtsLLID"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="7dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+
+                <in.playcerteam.playces.libs.ExpandableHeightGridView
+                    android:id="@+id/gridrow8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="15dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="15dp"
+                    android:horizontalSpacing="10dp"
+                    android:isScrollContainer="false"
+                    android:numColumns="4"
+                    android:stretchMode="columnWidth"
+                    android:verticalSpacing="10dp" />
+
+                <Button
+                    android:id="@+id/confirmBookingBtn8ID"
+                    style="@style/slot_time_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="35dp"
+                    android:layout_gravity="right"
+                    android:layout_marginTop="5dp"
+                    android:background="#0084b4"
+                    android:padding="5dp"
+                    android:text="Confirm Booking"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white" />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+    </ScrollView>
+
+    <in.playcerteam.playces.libs.ProgressWheel
+        android:id="@+id/progress_wheel1"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:gravity="center_horizontal"
+        android:visibility="gone"
+
+        wheel:matProg_barColor="@color/colorPrimary"
+        wheel:matProg_progressIndeterminate="true" />
+
+    <include layout="@layout/dialog_layout_no_network" />
+
+    <TextView
+        android:id="@+id/noAvailblesTVIDID"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:gravity="center_horizontal"
+        android:text="@string/no_slots_availble"
+        android:textColor="@color/all_textColor"
+        android:textSize="32sp"
+        android:textStyle="bold"
+        android:visibility="gone" />
+
+</RelativeLayout>

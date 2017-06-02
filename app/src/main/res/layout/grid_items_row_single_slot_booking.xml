@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:id="@+id/singleSlotLLID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="#fff"
+        android:orientation="vertical"
+        android:padding="15dp">
+
+        <TextView
+            android:id="@+id/slotTimeTVID"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:text="@string/time_for_slot1"
+            android:textSize="9sp" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="10dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/availbleCourtsTVID"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/booked"
+                android:textColor="@color/colorPrimary"
+                android:textSize="12sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="/"
+                android:textColor="@color/colorPrimary" />
+
+
+            <TextView
+                android:id="@+id/totalCourtsTVID"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/totalbookings"
+                android:textColor="#333"
+                android:textSize="10sp" />
+
+            <TextView
+                android:id="@+id/availorUnavailTVID"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:singleLine="true"
+                android:text="@string/available"
+                android:textColor="@color/playcestextColor"
+                android:textSize="12dp" />
+        </LinearLayout>
+
+    </LinearLayout>
+</LinearLayout>

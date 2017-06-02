@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+
+    android:layout_height="wrap_content"
+    android:background="@android:color/transparent">
+
+    <!--<include
+        android:id="@+id/headerID"
+        layout="@layout/header" />-->
+    <!--<View
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:background="@color/colorPrimary"
+        />-->
+
+    <TextView
+        android:id="@+id/sports_locationTVID"
+        android:visibility="gone"
+        style="@style/sub_sub_Title_texts"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="5dp"
+        android:gravity="center"
+        android:singleLine="true"
+        android:text="@string/sports_location"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="@color/playcestextColor" />
+
+    <RelativeLayout
+        android:id="@+id/spiAndCalRLID"
+        android:layout_width="wrap_content"
+        android:layout_height="45dp"
+        android:visibility="gone"
+        android:layout_below="@+id/sports_locationTVID"
+        android:layout_marginBottom="5dp"
+        android:layout_marginTop="5dp"
+        android:background="@color/white"
+        android:padding="10dp">
+
+        <Spinner
+            android:id="@+id/sportsSPID"
+            style="@style/headerTitle_sub"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:gravity="left"
+            android:singleLine="true" />
+
+        <TextView
+            android:id="@+id/availableDateTVID"
+            style="@style/headerTitle_sub"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:gravity="right"
+            android:paddingRight="15sp"
+            android:singleLine="true"
+            android:text="@string/calender"
+            android:textColor="@color/playcestextColor" />
+    </RelativeLayout>
+
+    <TabHost
+        android:id="@android:id/tabhost"
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/threeiconLLID"
+        android:layout_below="@id/spiAndCalRLID">
+
+        <FrameLayout
+            android:id="@android:id/tabcontent"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent" />
+
+        <TabWidget
+            android:id="@android:id/tabs"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:tabStripEnabled="false"
+            android:visibility="gone" />
+    </TabHost>
+
+
+    <LinearLayout
+        android:id="@+id/threeiconLLID"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="center_vertical"
+        android:background="@color/white"
+        android:padding="5dp"
+        android:weightSum="3">
+
+
+        <LinearLayout
+            android:id="@+id/accountLLID"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="left"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/profileBtnID"
+                style="@style/headerTitle"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center_horizontal"
+                android:background="@drawable/profile"
+                android:clickable="false"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/profileTVID"
+                style="@style/headerTitle_sub"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:clickable="false"
+                android:gravity="center"
+                android:singleLine="true"
+                android:text="@string/profile"
+                android:textAllCaps="false"
+                android:textColor="@color/grey" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/availabiltyLLID"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="left"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/availabiltyBtnID"
+                style="@style/headerTitle"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center_horizontal"
+                android:background="@drawable/available_dark"
+                android:clickable="false"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/availabiltyTVID"
+                style="@style/headerTitle_sub"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:clickable="false"
+                android:gravity="center"
+                android:singleLine="true"
+                android:text="@string/tab_availability"
+                android:textAllCaps="false"
+                android:textColor="@color/black" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/bookingLLID"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="left"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/bookingBtnID"
+                style="@style/headerTitle"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center_horizontal"
+                android:background="@drawable/booking"
+                android:clickable="false"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/bookingTVID"
+                style="@style/headerTitle_sub"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:clickable="false"
+                android:gravity="center"
+                android:singleLine="true"
+                android:text="@string/booking"
+                android:textAllCaps="false"
+                android:textColor="@color/grey" />
+        </LinearLayout>
+
+    </LinearLayout>
+</RelativeLayout>

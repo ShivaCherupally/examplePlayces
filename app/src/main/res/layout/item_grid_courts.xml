@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="37dp"
+    android:background="@color/courtsBgColor">
+
+
+    <TextView
+        android:id="@+id/text"
+        android:layout_width="80dp"
+        android:layout_height="35dp"
+        android:gravity="center"
+        android:background="@color/courtsBgColor"
+        android:text="Badminton"
+        android:textColor="@color/courtTextColor"
+        android:textSize="12sp" />
+
+    <View
+        android:id="@+id/borderViewTVID"
+        android:layout_width="80dp"
+        android:layout_height="2dp"
+        android:layout_below="@+id/text"
+        android:background="@color/colorPrimary"
+        android:gravity="center"
+        />
+
+</RelativeLayout>
